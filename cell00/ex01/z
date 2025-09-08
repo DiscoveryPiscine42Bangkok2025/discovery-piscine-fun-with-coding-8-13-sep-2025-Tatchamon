@@ -1,4 +1,3 @@
-echo "Z" > z
-git add z
-git commit -m "Add file z that outputs Z"
-git push
+?> cat z
+Z 
+?>
