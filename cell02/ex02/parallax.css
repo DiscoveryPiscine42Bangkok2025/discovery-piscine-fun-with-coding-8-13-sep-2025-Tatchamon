@@ -1,0 +1,63 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Parallax sections */
+.parallax {
+    /* ความสูงของ section */
+    height: 100vh;
+
+    /* ปรับภาพเป็น parallax */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* ภาพพื้นหลัง 1 และ 2 */
+.parallax1 {
+    background-image: url('image1.jpg'); /* เปลี่ยนเป็นภาพจริง */
+}
+
+.parallax2 {
+    background-image: url('image2.jpg'); /* เปลี่ยนเป็นภาพจริง */
+}
+
+/* Black section */
+.black-section {
+    height: 50vh;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ข้อความตรงกลางสำหรับ parallax */
+.centered-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+/* ข้อความสำหรับ black-section */
+.black-section .centered-text {
+    position: static;
+    transform: none;
+}
