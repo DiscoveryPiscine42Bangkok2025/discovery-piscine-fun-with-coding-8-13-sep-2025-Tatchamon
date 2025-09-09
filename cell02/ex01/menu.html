@@ -1,0 +1,69 @@
+/* พื้นหลังและการจัดวาง */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #e0f2ff; /* ฟ้าแบบ SNCF */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* container เมนู */
+.menu-container {
+    border: 2px solid #d70027; /* แดงตั๋วรถไฟ */
+    border-radius: 12px;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* เมนูหลัก */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu > li {
+    background: #ffdd57; /* สีชีส */
+    padding: 15px 30px;
+    position: relative;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.menu > li:hover {
+    background: #ffc107; /* สีชีสเข้มขึ้นเวลาชี้ */
+    transform: scale(1.03);
+}
+
+/* เมนูย่อย */
+.menu li ul {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff5cc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 100%;
+}
+
+.menu li:hover ul {
+    display: block;
+}
+
+.menu li ul li {
+    padding: 10px 20px;
+    margin: 0;
+    transition: background 0.3s;
+}
+
+.menu li ul li:hover {
+    background: #ffe680;
+}
