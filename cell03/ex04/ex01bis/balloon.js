@@ -2,19 +2,12 @@ const balloon = document.getElementById('balloon');
 let size = 200;
 const maxSize = 420;
 const minSize = 200;
-const colors = ['red', 'green', 'blue'];
-let colorIndex = 0;
+const colors = ['red', 'green', 'blue', 'yellow', 'purple', 'orange']; // เพิ่มสีตามชอบ
 
-// ฟังก์ชันเปลี่ยนสีถัดไป
-function nextColor() {
-  colorIndex = (colorIndex + 1) % colors.length;
-  return colors[colorIndex];
-}
-
-// ฟังก์ชันเปลี่ยนสีย้อนกลับ
-function prevColor() {
-  colorIndex = (colorIndex - 1 + colors.length) % colors.length;
-  return colors[colorIndex];
+// ฟังก์ชันสุ่มสี
+function randomColor() {
+  const index = Math.floor(Math.random() * colors.length);
+  return colors[index];
 }
 
 // เมื่อคลิกบอลลูน
@@ -24,10 +17,9 @@ balloon.addEventListener('click', () => {
   if (size > maxSize) {
     // ระเบิด
     size = minSize;
-    colorIndex = 0;
-    balloon.style.backgroundColor = colors[colorIndex];
+    balloon.style.backgroundColor = randomColor();
   } else {
-    balloon.style.backgroundColor = nextColor();
+    balloon.style.backgroundColor = randomColor();
   }
 
   balloon.style.width = `${size}px`;
@@ -40,6 +32,6 @@ balloon.addEventListener('mouseleave', () => {
     size -= 5;
     balloon.style.width = `${size}px`;
     balloon.style.height = `${size}px`;
-    balloon.style.backgroundColor = prevColor();
+    balloon.style.backgroundColor = randomColor();
   }
 });
