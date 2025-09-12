@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     const $ftList = $("#ft_list");
     const $newBtn = $("#new");
 
@@ -8,8 +8,8 @@ $(document).ready(function() {
         addTaskToDOM(task);
     });
 
-    // เมื่อกดปุ่ม New
-    $newBtn.click(function() {
+    // เมื่อคลิกปุ่ม "New"
+    $newBtn.click(function () {
         const task = prompt("Enter a new TO DO:");
         if (task && task.trim() !== "") {
             addTaskToDOM(task);
@@ -17,9 +17,10 @@ $(document).ready(function() {
         }
     });
 
+    // ฟังก์ชันเพิ่ม task
     function addTaskToDOM(task) {
         const $div = $("<div></div>").text(task);
-        $div.click(function() {
+        $div.click(function () {
             if (confirm("Do you want to delete this task?")) {
                 $(this).remove();
                 saveTasks();
@@ -28,6 +29,7 @@ $(document).ready(function() {
         $ftList.prepend($div);
     }
 
+    // ฟังก์ชันโหลด task จาก cookie
     function getTasks() {
         const cookie = document.cookie
             .split('; ')
@@ -40,9 +42,10 @@ $(document).ready(function() {
         }
     }
 
+    // ฟังก์ชันบันทึก task ลง cookie
     function saveTasks() {
         const tasks = [];
-        $ftList.children("div").each(function() {
+        $ftList.children("div").each(function () {
             tasks.push($(this).text());
         });
         document.cookie = "todoList=" + encodeURIComponent(JSON.stringify(tasks)) + "; path=/";

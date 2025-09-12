@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>To Do or not to do</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="todo.js" defer></script>
+  <title>To Do List (jQuery Version)</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="todo.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    #ft_list {
+      margin-top: 20px;
+    }
+    #ft_list div {
+      padding: 8px;
+      margin: 5px 0;
+      background: #f2f2f2;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <button id="new">New</button>
